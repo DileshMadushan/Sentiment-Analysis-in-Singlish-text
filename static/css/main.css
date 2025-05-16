@@ -1,4 +1,175 @@
-*{
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+  background-size: 400% 400%;
+  animation: gradientBG 8s ease infinite;
+  height: 100vh;
+}
+
+/* Animated Gradient Background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Split Layout */
+.split {
+  height: 100vh;
+  width: 50%;
+  position: fixed;
+  top: 0;
+}
+
+.left {
+  left: 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.right {
+  right: 0;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* Product Image */
+.centered img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out, box-shadow 0.3s;
+}
+
+.centered img:hover {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Sentiment Labels */
+label {
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+label:nth-child(1) {
+  color: #28a745;
+}
+
+label:nth-child(2) {
+  color: #dc3545;
+}
+
+/* Review Form */
+textarea {
+  width: 100%;
+  height: 100px;
+  border: 2px solid #007bff;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease-in-out;
+}
+
+textarea:focus {
+  border-color: #ff4081;
+  box-shadow: 0px 0px 8px rgba(255, 64, 129, 0.7);
+  outline: none;
+  transform: scale(1.02);
+}
+
+/* Submit Button */
+input[type="submit"] {
+  background: linear-gradient(to right, #007bff, #6610f2);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background: linear-gradient(to right, #6610f2, #007bff);
+  transform: scale(1.05);
+}
+
+/* Review Section */
+.coment-bottom {
+  margin-top: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Commented Section - No Animation */
+/* .commented-section {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+} */
+
+/* Removed Hover Animation */
+/* .commented-section:hover {
+  transform: none;
+  box-shadow: none;
+} */
+
+/* .commented-user {
+  font-weight: bold;
+  font-size: 16px;
+  color: #17a2b8;
+} */
+
+.text-nowrap {
+  font-size: 16px;
+  color: #333;
+  padding: 10px 0;
+}
+
+.text-nowrap:hover {
+  color: #ff4081;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .split {
+      width: 100%;
+      height: auto;
+      position: relative;
+  }
+  .left, .right {
+      width: 100%;
+  }
+  /* Sentiment Labels */
+.positive {
+  color: green;
+}
+
+.negative {
+  color: yellow;
+}
+}
+
+
+
+
+
+/* *{
     font-family: sans-serif;
 }
 
@@ -50,4 +221,4 @@ textarea {
   text-decoration: underline;
   text-underline-position: under;
   cursor: pointer;
-}
+} */

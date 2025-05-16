@@ -7,7 +7,6 @@ app = Flask(__name__)
 logging.info('Flask server started')
 
 data = dict()
-
 reviews =[]
 positive = 0
 negative = 0
@@ -40,6 +39,7 @@ def my_post():
     if prediction == 'negative':
         global negative
         negative += 1
+        
     else:
         global positive
         positive += 1

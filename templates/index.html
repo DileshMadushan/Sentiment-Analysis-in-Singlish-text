@@ -27,10 +27,14 @@
                         <label for="">Negative Sentiments : {{ data.negative }}</label>
                     </div>
                     <div>
-                        <form method="post">
+                        <form method="post" onsubmit="return validateForm()">
+                            <textarea name="text" id="reviewText"></textarea>
+                            <input type="submit" value="Submit">
+                        </form>
+                        <!-- <form method="post">
                           <textarea name="text"></textarea>
                           <input type="submit">
-                        </form>
+                        </form> -->
                     </div>
 
                     <div class="coment-bottom bg-white p-2 px-4">
@@ -50,4 +54,22 @@
     </div>
 
 </body>
+<script>
+    function validateForm() {
+        let text = document.getElementById("reviewText").value.trim(); // Trim to remove extra spaces
+        if (text === "") {
+            alert("Review cannot be empty!"); // Show alert message
+            return false; // Prevent form submission
+        }
+        return true; // Allow form submission if valid
+    }
+    </script>
 </html>
+
+
+ 
+
+    
+
+
+    

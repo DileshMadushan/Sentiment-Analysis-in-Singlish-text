@@ -7,7 +7,7 @@ import pickle
 from nltk.stem import PorterStemmer
 ps = PorterStemmer()
 
-with open('static/model/model.pickle', 'rb') as f:
+with open('static/model/modelmnb.pickle', 'rb') as f:
     model = pickle.load(f)
 
 with open('static/model/corpora/stopwords/english', 'r') as file:
@@ -51,6 +51,7 @@ def vectorizer(ds):
 def get_prediction(vectorized_text):
     prediction = model.predict(vectorized_text)
     if prediction == 1:
-        return 'negative'
-    else:
         return 'positive'
+        
+    else:
+        return 'negative'
